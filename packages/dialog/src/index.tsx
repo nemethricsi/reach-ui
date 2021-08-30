@@ -19,7 +19,7 @@ import { useCheckStyles } from "@reach/utils/dev-utils";
 import { useComposedRefs } from "@reach/utils/compose-refs";
 import { composeEventHandlers } from "@reach/utils/compose-event-handlers";
 import FocusLock from "react-focus-lock";
-import { RemoveScroll } from "react-remove-scroll";
+// import { RemoveScroll } from "react-remove-scroll";
 import PropTypes from "prop-types";
 
 import type * as Polymorphic from "@reach/utils/polymorphic";
@@ -198,7 +198,7 @@ const DialogInner = React.forwardRef(function DialogInner(
       disabled={dangerouslyBypassFocusLock}
       crossFrame={unstable_lockFocusAcrossFrames ?? true}
     >
-      <RemoveScroll
+      {/* <RemoveScroll
         allowPinchZoom={allowPinchZoom}
         enabled={!dangerouslyBypassScrollLock}
       >
@@ -206,16 +206,16 @@ const DialogInner = React.forwardRef(function DialogInner(
           {...props}
           ref={ref}
           data-reach-dialog-overlay=""
-          /*
+          
            * We can ignore the `no-static-element-interactions` warning here
            * because our overlay is only designed to capture any outside
            * clicks, not to serve as a clickable element itself.
-           */
+           
           onClick={composeEventHandlers(onClick, handleClick)}
           onKeyDown={composeEventHandlers(onKeyDown, handleKeyDown)}
           onMouseDown={composeEventHandlers(onMouseDown, handleMouseDown)}
         />
-      </RemoveScroll>
+      </RemoveScroll> */}
     </FocusLock>
   );
 }) as Polymorphic.ForwardRefComponent<"div", DialogOverlayProps>;
